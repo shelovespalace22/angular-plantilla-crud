@@ -1,0 +1,27 @@
+.side-nav {
+  background-color: #1f2937; /* bg-gray-900 */
+  color: white;
+  overflow: hidden;
+  height: 100vh;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar-open {
+  width: 15rem; /* w-60 */
+}
+
+.sidebar-closed {
+  width: 0;
+}
+
+.menu-header {
+  padding: 1rem;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: bold;
+  border-bottom: 1px solid #374151; /* border-gray-700 */
+}
+
+.menu-divider {
+  border-bottom: 1px solid #374151; /* border-gray-700 */
+}

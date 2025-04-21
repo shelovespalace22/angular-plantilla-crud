@@ -1,0 +1,14 @@
+.layout-container {
+  display: flex;
+  height: 100vh;
+}
+
+.layout-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.main-content {
+  padding: 1.5rem; /* p-6 */
+}

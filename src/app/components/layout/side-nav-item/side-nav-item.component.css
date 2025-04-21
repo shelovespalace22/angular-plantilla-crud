@@ -1,0 +1,22 @@
+.side-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
+  color: white;
+}
+
+.side-nav-item:hover {
+  background-color: #1f2937; /* hover:bg-gray-800 */
+}
+
+.icon {
+  font-size: 1.25rem; /* text-xl */
+}
+
+.label {
+  font-size: 1rem;
+}

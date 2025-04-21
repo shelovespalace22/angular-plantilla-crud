@@ -1,0 +1,6 @@
+<div [class.sidebar-open]="isOpen" [class.sidebar-closed]="!isOpen" class="side-nav">
+  <div class="menu-header">Menú</div>
+  <div *ngFor="let item of menuItems" class="menu-divider">
+    <app-side-nav-item [label]="item.label" [icon]="item.icon" [route]="item.route"></app-side-nav-item>
+  </div>
+</div>

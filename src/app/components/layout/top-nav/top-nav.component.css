@@ -1,0 +1,23 @@
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.5rem; /* px-6 py-4 */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.toggle-button {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.greeting {
+  color: #4b5563; /* text-gray-700 */
+}
