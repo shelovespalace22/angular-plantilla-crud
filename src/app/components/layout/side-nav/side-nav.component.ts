@@ -13,6 +13,7 @@ export class SideNavComponent {
   @Input() isOpen: boolean = true;
 
   menuItems = [
-    { label: 'CRUD', icon: '📦', route: '/categories' },
+    { label: 'Categorías', icon: '📦', route: '/categories' },
+    { label: 'Productos', icon: '📦', route: '/products' },
   ];
 }
