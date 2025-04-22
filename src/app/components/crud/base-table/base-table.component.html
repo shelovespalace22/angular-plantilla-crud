@@ -1,0 +1,39 @@
+<input class="form-control mb-3" placeholder="Buscar..." (input)="onSearch($event)" />
+
+<table class="table table-bordered table-striped">
+  <thead class="table-light">
+    <tr>
+      <th *ngFor="let col of columns">{{ col.title }}</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td *ngFor="let col of columns">{{ item[col.property] }}</td>
+      <td>
+        <app-base-actions
+          [data]="item"
+          [formFields]="formFields"
+          [service]="service"
+          [refresh]="loadData.bind(this)"
+        ></app-base-actions>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between align-items-center">
+  <select class="form-select w-auto" [(ngModel)]="perPage" (change)="changePerPage(perPage)">
+    <option *ngFor="let opt of [5, 10, 20]" [value]="opt">{{ opt }} por página</option>
+  </select>
+
+  <ul class="pagination mb-0">
+    <li class="page-item" [class.disabled]="page === 1">
+      <button class="page-link" (click)="changePage(page - 1)">Anterior</button>
+    </li>
+    <li class="page-item"><span class="page-link">{{ page }}</span></li>
+    <li class="page-item">
+      <button class="page-link" (click)="changePage(page + 1)">Siguiente</button>
+    </li>
+  </ul>
+</div>
