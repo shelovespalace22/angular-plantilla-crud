@@ -4,7 +4,7 @@ import { NgbModal, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormCategoriesComponent } from '../form-categories/form-categories.component';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { CategoriesService } from '../../../core/services/categories.service';
-import { LucideAngularModule } from 'lucide-angular';
+import { LucideAngularModule, SquarePen, Trash } from 'lucide-angular';
 
 @Component({
   selector: 'app-categories-actions',
@@ -15,6 +15,9 @@ import { LucideAngularModule } from 'lucide-angular';
 export class CategoriesActionsComponent {
   @Input() data!: any;
   @Input() refresh!: () => void;
+
+  readonly SquarePen = SquarePen;
+  readonly Trash = Trash;
 
   constructor(private modal: NgbModal, private service: CategoriesService) {}
 
