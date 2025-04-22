@@ -10,27 +10,27 @@ export class WebApiService {
 
   constructor(protected http: HttpClient) {}
 
-  getAll(endpoint: string, options = {}) {
-    return this.http.get(`${this.baseUrl}${endpoint}`, options);
+  getAll(endpoint: string, params = {}) {
+    return this.http.get(`${this.baseUrl}${endpoint}`, {params});
   }
 
-  getOne(endpoint: string, id: number | string, options = {}) {
-    return this.http.get(`${this.baseUrl}${endpoint}/${id}`, options);
+  getOne(endpoint: string, id: number | string, params = {}) {
+    return this.http.get(`${this.baseUrl}${endpoint}/${id}`, {params});
   }
 
-  post(endpoint: string, data: any, options = {}) {
-    return this.http.post(`${this.baseUrl}${endpoint}`, data, options);
+  post(endpoint: string, data: any, params = {}) {
+    return this.http.post(`${this.baseUrl}${endpoint}`, data, {params});
   }
 
-  put(endpoint: string, id: number | string, data: any, options = {}) {
-    return this.http.put(`${this.baseUrl}${endpoint}/${id}`, data, options);
+  put(endpoint: string, id: number | string, data: any, params = {}) {
+    return this.http.put(`${this.baseUrl}${endpoint}/${id}`, data, {params});
   }
 
-  patch(endpoint: string, id: number | string, data: any, options = {}) {
-    return this.http.patch(`${this.baseUrl}${endpoint}/${id}`, data, options);
+  patch(endpoint: string, id: number | string, data: any, params = {}) {
+    return this.http.patch(`${this.baseUrl}${endpoint}/${id}`, data, {params});
   }
 
-  delete(endpoint: string, id: number | string, options = {}) {
-    return this.http.delete(`${this.baseUrl}${endpoint}/${id}`, options);
+  delete(endpoint: string, id: number | string, params = {}) {
+    return this.http.delete(`${this.baseUrl}${endpoint}/${id}`, {params});
   }
 }

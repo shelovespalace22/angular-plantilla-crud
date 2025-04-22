@@ -7,8 +7,8 @@ import { WebApiService } from './web-api.service';
 export class CategoriesService extends WebApiService {
   private endpoint = 'categories';
 
-  getCategories() {
-    return this.getAll(this.endpoint);
+  getCategories(params = {}) {
+    return this.getAll(this.endpoint, params);
   }
 
   getCategory(id: number) {
