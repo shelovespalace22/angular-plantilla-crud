@@ -34,8 +34,8 @@ export class BaseFormComponent {
   save() {
     const formData = this.form.value;
     const request = this.type === 'edit'
-      ? this.service.update(this.data.id, formData)
-      : this.service.create(formData);
+      ? this.service.updateRegister(this.data.id, formData)
+      : this.service.createRegister(formData);
 
     request.subscribe(() => {
       this.saved();

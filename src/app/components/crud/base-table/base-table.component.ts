@@ -33,7 +33,7 @@ export class BaseTableComponent {
     if (this.search.length >= 3) {
       params.search = this.search;
     }
-    this.service.getAll(params).subscribe((res: any) => {
+    this.service.getRegisters(params).subscribe((res: any) => {
       this.data = res.data;
     });
   }

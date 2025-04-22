@@ -37,7 +37,7 @@ export class BaseActionsComponent {
     ref.componentInstance.title = 'Confirmar Eliminación';
     ref.componentInstance.message = '¿Estás seguro de que deseas eliminar este registro?';
     ref.componentInstance.confirmed.subscribe(() => {
-      this.service.delete(this.data.id).subscribe(() => {
+      this.service.deleteRegister(this.data.id).subscribe(() => {
         this.refresh();
       });
     });

@@ -7,23 +7,23 @@ import { WebApiService } from './web-api.service';
 export class CategoriesService extends WebApiService {
   private endpoint = 'categories';
 
-  getCategories(params = {}) {
+  getRegisters(params = {}) {
     return this.getAll(this.endpoint, params);
   }
 
-  getCategory(id: number) {
+  getRegister(id: number) {
     return this.getOne(this.endpoint, id);
   }
 
-  createCategory(data: any) {
+  createRegister(data: any) {
     return this.post(this.endpoint, data);
   }
 
-  updateCategory(id: number, data: any) {
+  updateRegister(id: number, data: any) {
     return this.put(this.endpoint, id, data);
   }
 
-  deletCategory(id: number) {
+  deleteRegister(id: number) {
     return this.delete(this.endpoint, id);
   }
 }
