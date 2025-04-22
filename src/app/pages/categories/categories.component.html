@@ -1,3 +1,61 @@
-<ngb-alert type="success" [dismissible]="dismissible">
-  ¡ng-bootstrap funcionando perfectamente!
-</ngb-alert>
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div>
+    <h4 class="fw-bold mb-0">{{ title }}</h4>
+    <small class="fw-bold">{{ subtitle }}</small>
+  </div>
+  <button class="btn btn-success" (click)="openForm()">CREAR</button>
+</div>
+
+<div class="mb-3">
+  <input
+  type="text"
+  class="form-control"
+  placeholder="Buscar..."
+  (input)="onSearch($event)"
+  />
+</div>
+
+<table class="table table-striped table-bordered">
+  <thead class="table-light">
+    <tr>
+      <th *ngFor="let col of columns">{{ col.title }}</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td *ngFor="let col of columns">
+        <ng-container [ngSwitch]="col.type">
+          <span *ngSwitchCase="'html'" [innerHTML]="item[col.property]"></span>
+          <span *ngSwitchDefault>{{ item[col.property] }}</span>
+        </ng-container>
+      </td>
+      <td>
+        <app-categories-actions [data]="item" [refresh]="loadData.bind(this)"></app-categories-actions>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between align-items-center">
+  <div>
+    <select class="form-select w-auto" [(ngModel)]="perPage" (change)="changePerPage(perPage)">
+      <option *ngFor="let option of [5,10,15,25]" [value]="option">{{ option }} por página</option>
+    </select>
+  </div>
+  <div>
+    <nav>
+      <ul class="pagination mb-0">
+        <li class="page-item" [class.disabled]="page === 1">
+          <button class="page-link" (click)="changePage(page - 1)">Anterior</button>
+        </li>
+        <li class="page-item">
+          <span class="page-link">{{ page }}</span>
+        </li>
+        <li class="page-item">
+          <button class="page-link" (click)="changePage(page + 1)">Siguiente</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
