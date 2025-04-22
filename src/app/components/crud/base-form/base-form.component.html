@@ -10,10 +10,20 @@
       <div *ngFor="let field of formFields" class="mb-3 col-12">
         <label class="form-label">{{ field.label }}</label>
         <input
+          *ngIf="field.type === 'text'"
           class="form-control"
           [formControlName]="field.property"
           [type]="field.type || 'text'"
         />
+        <select
+          *ngIf="field.type === 'select'"
+          class="form-select"
+          [formControlName]="field.property"
+        >
+          <option *ngFor="let opt of field.options" [value]="opt.id">
+            {{ opt.name }}
+          </option>
+        </select>
       </div>
     </div>
   </form>
