@@ -1,5 +1,4 @@
-// base-crud.component.ts
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModal, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { BaseTableComponent } from '../base-table/base-table.component';
@@ -18,6 +17,8 @@ export class BaseCrudComponent {
   @Input() formFields: any[] = [];
   @Input() service: any;
 
+  @ViewChild(BaseTableComponent) tableComponent!: BaseTableComponent;
+
   constructor(private modal: NgbModal) {}
 
   openForm() {
@@ -26,6 +27,8 @@ export class BaseCrudComponent {
     ref.componentInstance.data = null;
     ref.componentInstance.formFields = this.formFields;
     ref.componentInstance.service = this.service;
-    ref.componentInstance.saved = () => {};
+    ref.componentInstance.saved = () => {
+      this.tableComponent.loadData();
+    };
   }
 }
