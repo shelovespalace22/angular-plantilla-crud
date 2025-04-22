@@ -45,7 +45,7 @@ export class CategoriesComponent {
       params.search = this.search;
     }
 
-    this.service.getAll('categories', params).subscribe((res: any) => {
+    this.service.getCategories(params).subscribe((res: any) => {
       this.data = res.data;
     });
   }
